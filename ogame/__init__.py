@@ -79,7 +79,7 @@ class OGame(object):
                 tag.extract()
             return int(level.text.strip())
 
-        res = self.session.get(self.get_url('shipyard')).content
+        res = self.session.get(self.get_url('shipyard', planet_id)).content
         soup = BeautifulSoup(res)
 
         lightFighter = get_nbr(soup, 'military204')
